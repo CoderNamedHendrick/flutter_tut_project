@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 void main() {
-  debugPaintSizeEnabled = false;
   runApp(MyApp());
 }
 
@@ -84,10 +83,17 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter layout demo'),
         ),
-        body: Column(
+        body: ListView(
           children: [
+            Image.asset(
+              'images/lake.jpg',
+            width: 600,
+            height: 240,
+            fit: BoxFit.cover,
+            ),
             titleSection,
             buttonSection,
+            textSection,
           ],
         ),
       ),
