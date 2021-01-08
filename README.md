@@ -1,5 +1,3 @@
-# building_layouts
-
 Flutter Tutorial Project
 
 ## Getting Started
