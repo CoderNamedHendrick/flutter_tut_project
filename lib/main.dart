@@ -1,45 +1,14 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+
+import 'boxes.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class TapboxA extends StatefulWidget{
-  TapboxA({Key key}) : super(key: key);
 
-  @override
-  _TapboxAState createState() => _TapboxAState();
-}
-
-class _TapboxAState extends State<TapboxA> {
-  bool _active = false;
-
-  void _handleTap(){
-    setState(() {
-      _active = !_active;
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _handleTap,
-      child: Container(
-        child: Center(
-          child: Text(
-            _active ? 'Active' : 'Inactive',
-            style: TextStyle(fontSize: 32, color: Colors.white),
-          ),
-        ),
-        width: 200,
-        height: 200,
-        decoration: BoxDecoration(
-          color: _active ? Colors.lightGreen[700] : Colors.grey[600]
-        ),
-      ),
-    );
-  }
-}
 class MyApp extends StatelessWidget {
 
   // Title Section Widget
@@ -126,7 +95,12 @@ class MyApp extends StatelessWidget {
         //     textSection,
         //   ],
         body: Center(
-          child: TapboxA(),
+          child: Row(
+            children: [
+              TapboxA(),
+              ParentWidget(),
+            ],
+          ),
         ),
       ),
     );
